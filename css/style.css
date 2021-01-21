@@ -66,6 +66,7 @@ img {
   width: 20rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
   margin-top: 50px;
 }
@@ -75,12 +76,36 @@ img {
   cursor: pointer;
   filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4));
 }
-.music_controls .main-button {
+.music_controls .fa:hover {
+  color: grey;
+}
+.music_controls .main_button {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   background-color: #111;
   color: #f6f6f6;
   /* add display flex to center the icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.4rem;
+}
+.music_controls .fa-play:hover {
+  background-color: #f6f6f6;
+  color: #111111;
+  box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+/* animate  */
+.anime {
+  animation: rotatePlayer 3s linear infinite;
+}
+@keyframes rotatePlayer {
+  from {
+    transform: rotate((0deg));
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
