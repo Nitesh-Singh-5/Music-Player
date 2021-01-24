@@ -2,6 +2,28 @@
 const music = document.querySelector('audio')
 const play = document.getElementById('play');
 const img = document.getElementById('img');
+const artist = document.getElementById('artist');
+const title = document.getElementById('title');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+
+const songs = [
+  {  
+    name: "Nitesh",
+    tittle: "Libbas",
+    artist:"kaka",
+   },
+   {  
+    name: "Nitesh",
+    tittle: "temporary pyar",
+    artist:"kaka",
+   },
+   {  
+    name: "Nitesh",
+    tittle: "Keh len de",
+    artist:"kaka",
+   }
+]
 
 isPlaying = false;
 
@@ -21,9 +43,7 @@ const pauseMusic=()=>{
 }
 
 play.addEventListener('click',()=>{
-    if(isPlaying){
-        pauseMusic();      
-    }else{
-        playMusic();
-    }
+  isPlaying ? pauseMusic() : playMusic();
 })
+
+changing 
