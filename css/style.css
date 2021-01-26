@@ -101,11 +101,3 @@ img {
 .anime {
   animation: rotatePlayer 3s linear infinite;
 }
-@keyframes rotatePlayer {
-  from {
-    transform: rotate((0deg));
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
