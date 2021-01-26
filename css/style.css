@@ -79,7 +79,18 @@ img {
 .music_controls .fa:hover {
   color: grey;
 }
-
+.music_controls .main_button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #111;
+  color: #f6f6f6;
+  /* add display flex to center the icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
 .music_controls .fa-play:hover {
   background-color: #f6f6f6;
   color: #111111;
