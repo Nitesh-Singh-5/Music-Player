@@ -54,5 +54,21 @@ const loadSongs = (songs) => {
   music.src = "music/"+ songs.name + '.mp3';
   img.src = 'images/'+ songs.name+'.jpg';
 };
+songIndex = 0;
 
-loadSongs(songs[2]);
+// loadSongs(songs[2]);
+
+const nextSong = ()=>{
+  songIndex = (songIndex+1) % songs.length;
+  loadSongs(songs[songIndex]);
+  playMusic();
+}
+
+const prevSong = ()=>{
+  songIndex = (songIndex-1 + songs.length) % songs.length;
+  loadSongs(songs[songIndex]);
+  playMusic();
+}
+
+next.addEventListener('click',nextSong);
+prev.addEventListener('click',prevSong);
