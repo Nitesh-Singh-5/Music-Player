@@ -14,13 +14,13 @@ const songs = [
     artist:"kaka",
    },
    {  
-    name: "Nitesh",
-    title: "temporary pyar",
+    name: "Temporary Pyar",
+    title: "Temporary Pyar",
     artist:"kaka",
    },
    {  
-    name: "Nitesh",
-    title: "Keh len de",
+    name: "Keh Len De",
+    title: "Keh Len De",
     artist:"kaka",
    }
 ]
@@ -52,7 +52,7 @@ const loadSongs = (songs) => {
   title.textContent = songs.title;
   artist.textContent = songs.artist;
   music.src = "music/"+ songs.name + '.mp3';
-  img.src = 'images/'+ songs.name+'.jfif';
+  img.src = 'images/'+ songs.name+'.jpg';
 };
 
-loadSongs(songs[0]);
+loadSongs(songs[2]);
