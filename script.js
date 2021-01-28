@@ -46,4 +46,3 @@ play.addEventListener('click',()=>{
   isPlaying ? pauseMusic() : playMusic();
 })
 
-changing 
