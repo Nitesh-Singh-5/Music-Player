@@ -1,4 +1,3 @@
-
 const music = document.querySelector('audio')
 const play = document.getElementById('play');
 const img = document.getElementById('img');
@@ -6,6 +5,12 @@ const artist = document.getElementById('artist');
 const title = document.getElementById('title');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
+
+let progress = document.getElementById('progress')
+let total_duration = document.getElementById('duration');
+let current_time = document.getElementById('current_time')
+
+const progress_div = document.getElementById('progress_div')
 
 const songs = [
   {  
@@ -70,5 +75,58 @@ const prevSong = ()=>{
   playMusic();
 }
 
+// Progress js works
+
+music.addEventListener('timeupdate',(event) =>{
+  // console.log(event);
+  const{currentTime,duration} = event.srcElement;
+  // console.log(currentTime);
+  // console.log(duration);
+
+  let progress_time = (currentTime/duration)*100;
+  progress.style.width = `${progress_time}%`;
+
+  // music duration update
+
+  let min_duration = Math.floor(duration/60);
+  let sec_duration = Math.floor(duration%60);
+  // console.log(min_duration);
+  // console.log(sec_duration);
+
+  let tot_duration = `${min_duration}:${sec_duration}`;
+  if(duration){
+    total_duration.textContent = `${tot_duration}`
+  }
+
+  // current duration update
+  
+  let min_currentTime = Math.floor(currentTime/60);
+  let sec_currentTime = Math.floor(currentTime%60);
+  // console.log(min_currentTime);
+  // console.log(sec_currentTime);
+
+  if(sec_currentTime<10){
+    sec_currentTime = `0${sec_currentTime}`;
+  }
+  let tot_currentTime = `${min_currentTime}:${sec_currentTime}`;
+  current_time.textContent = `${tot_currentTime}`
+})
+
+// progress on click in progress bar
+
+progress_div.addEventListener('click',(event)=>{
+  // console.log(event);
+  const{duration} = music;
+
+  let move_progress = (event.offsetX/event.srcElement.clientWidth)*duration;
+  // console.log(duration);
+  // console.log(move_progress);
+  
+  music.currentTime = move_progress;
+})
+
+
+//if music ended next song function
+music.addEventListener("ended",nextSong);
 next.addEventListener('click',nextSong);
 prev.addEventListener('click',prevSong);
