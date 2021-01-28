@@ -9,18 +9,18 @@ const next = document.getElementById('next');
 
 const songs = [
   {  
-    name: "Nitesh",
-    tittle: "Libbas",
+    name: "libbas",
+    title: "Libbas",
     artist:"kaka",
    },
    {  
     name: "Nitesh",
-    tittle: "temporary pyar",
+    title: "temporary pyar",
     artist:"kaka",
    },
    {  
     name: "Nitesh",
-    tittle: "Keh len de",
+    title: "Keh len de",
     artist:"kaka",
    }
 ]
@@ -46,3 +46,13 @@ play.addEventListener('click',()=>{
   isPlaying ? pauseMusic() : playMusic();
 })
 
+// changing the music Data
+
+const loadSongs = (songs) => {
+  title.textContent = songs.title;
+  artist.textContent = songs.artist;
+  music.src = "music/"+ songs.name + '.mp3';
+  img.src = 'images/'+ songs.name+'.jfif';
+};
+
+loadSongs(songs[0]);
