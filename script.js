@@ -102,8 +102,6 @@ music.addEventListener('timeupdate',(event) =>{
   
   let min_currentTime = Math.floor(currentTime/60);
   let sec_currentTime = Math.floor(currentTime%60);
-  // console.log(min_currentTime);
-  // console.log(sec_currentTime);
 
   if(sec_currentTime<10){
     sec_currentTime = `0${sec_currentTime}`;
@@ -119,8 +117,6 @@ progress_div.addEventListener('click',(event)=>{
   const{duration} = music;
 
   let move_progress = (event.offsetX/event.srcElement.clientWidth)*duration;
-  // console.log(duration);
-  // console.log(move_progress);
   
   music.currentTime = move_progress;
 })
