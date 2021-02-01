@@ -16,7 +16,7 @@ html {
 .main_div {
   width: 100vw;
   height: 100vh;
-  background-color: #f6f6f6;
+  background-color: rgb(0, 0, 0, 0.85);
   display: grid;
   place-items: center; /* makes a center in nother div */
 }
